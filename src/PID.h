@@ -16,21 +16,20 @@ public:
   double Kp;
   double Ki;
   double Kd;
-
+  //Some members
+  bool isInitialized;
+  double cteBias;
+  double ctePrevious;
+  double cteSum;
   /*
   * Constructor
   */
-  PID();
+  PID(double const &_p, double const &_i, double const &_d);
 
   /*
   * Destructor.
   */
   virtual ~PID();
-
-  /*
-  * Initialize PID.
-  */
-  void Init(double Kp, double Ki, double Kd);
 
   /*
   * Update the PID error variables given cross track error.
@@ -40,7 +39,7 @@ public:
   /*
   * Calculate the total PID error.
   */
-  double TotalError();
+  double TotalError() const;
 };
 
 #endif /* PID_H */
