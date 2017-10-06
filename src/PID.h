@@ -13,18 +13,27 @@ public:
   /*
   * Coefficients
   */ 
-  double Kp;
-  double Ki;
-  double Kd;
+  double coefficients[3]; //p, i, d
+//  double Kp;
+//  double Ki;
+//  double Kd;
   //Some members
   bool isInitialized;
   double cteBias;
   double ctePrevious;
   double cteSum;
+  //twiddle
+  double deltaK[3];
+  int deltaKIndex;
+  int iterations;
+  int curIteration;
+  double errorSum;
+  double previousErrorSum;
+  bool condition;
   /*
   * Constructor
   */
-  PID(double const &_p, double const &_i, double const &_d);
+  PID(double const &_p, double const &_i, double const &_d, int iterations = 7000);
 
   /*
   * Destructor.
@@ -39,7 +48,7 @@ public:
   /*
   * Calculate the total PID error.
   */
-  double TotalError() const;
+  double TotalError() ;
 };
 
 #endif /* PID_H */
