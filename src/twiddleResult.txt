@@ -1,0 +1,618 @@
+[100%] Built target pid
+PID with a total of 3 controllers
+Listening to port 4567
+Connected!!!
+Count -1
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 1538.17
+>>Coefficient 0.24 with delta 0.04
+Coefficient 0.0004 with delta 8e-05
+Coefficient 3 with delta 0.6
+
+Twiddle to next iteration - error of current iteration is 1172.39 to 1538.17
+>>Coefficient 0.24 with delta 0.04
+Coefficient 0.0004 with delta 8e-05
+Coefficient 3 with delta 0.6
+
+Count 0
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 1172.39
+Coefficient 0.24 with delta 0.044
+>>Coefficient 0.00048 with delta 8e-05
+Coefficient 3 with delta 0.6
+
+Twiddle to next iteration - error of current iteration is 1021.5 to 1172.39
+Coefficient 0.24 with delta 0.044
+>>Coefficient 0.00048 with delta 8e-05
+Coefficient 3 with delta 0.6
+
+Count 1
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 1021.5
+Coefficient 0.24 with delta 0.044
+Coefficient 0.00048 with delta 8.8e-05
+>>Coefficient 3.6 with delta 0.6
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 1143.54 to 1021.5
+Coefficient 0.24 with delta 0.044
+Coefficient 0.00048 with delta 8.8e-05
+>>Coefficient 3.6 with delta 0.6
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1818.52 to 1021.5
+Coefficient 0.24 with delta 0.044
+Coefficient 0.00048 with delta 8.8e-05
+>>Coefficient 2.4 with delta 0.6
+
+Count 2
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 1021.5
+>>Coefficient 0.284 with delta 0.044
+Coefficient 0.00048 with delta 8.8e-05
+Coefficient 3 with delta 0.54
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 1179.99 to 1021.5
+>>Coefficient 0.284 with delta 0.044
+Coefficient 0.00048 with delta 8.8e-05
+Coefficient 3 with delta 0.54
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1265.91 to 1021.5
+>>Coefficient 0.196 with delta 0.044
+Coefficient 0.00048 with delta 8.8e-05
+Coefficient 3 with delta 0.54
+
+Count 0
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 1021.5
+Coefficient 0.24 with delta 0.0396
+>>Coefficient 0.000568 with delta 8.8e-05
+Coefficient 3 with delta 0.54
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 1155.71 to 1021.5
+Coefficient 0.24 with delta 0.0396
+>>Coefficient 0.000568 with delta 8.8e-05
+Coefficient 3 with delta 0.54
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1265.66 to 1021.5
+Coefficient 0.24 with delta 0.0396
+>>Coefficient 0.000392 with delta 8.8e-05
+Coefficient 3 with delta 0.54
+
+Count 1
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 1021.5
+Coefficient 0.24 with delta 0.0396
+Coefficient 0.00048 with delta 7.92e-05
+>>Coefficient 3.54 with delta 0.54
+
+Twiddle to next iteration - error of current iteration is 997.502 to 1021.5
+Coefficient 0.24 with delta 0.0396
+Coefficient 0.00048 with delta 7.92e-05
+>>Coefficient 3.54 with delta 0.54
+
+Count 2
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 997.502
+>>Coefficient 0.2796 with delta 0.0396
+Coefficient 0.00048 with delta 7.92e-05
+Coefficient 3.54 with delta 0.594
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 1078.57 to 997.502
+>>Coefficient 0.2796 with delta 0.0396
+Coefficient 0.00048 with delta 7.92e-05
+Coefficient 3.54 with delta 0.594
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1187.65 to 997.502
+>>Coefficient 0.2004 with delta 0.0396
+Coefficient 0.00048 with delta 7.92e-05
+Coefficient 3.54 with delta 0.594
+
+Count 0
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 997.502
+Coefficient 0.24 with delta 0.03564
+>>Coefficient 0.0005592 with delta 7.92e-05
+Coefficient 3.54 with delta 0.594
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 1059.41 to 997.502
+Coefficient 0.24 with delta 0.03564
+>>Coefficient 0.0005592 with delta 7.92e-05
+Coefficient 3.54 with delta 0.594
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1114.79 to 997.502
+Coefficient 0.24 with delta 0.03564
+>>Coefficient 0.0004008 with delta 7.92e-05
+Coefficient 3.54 with delta 0.594
+
+Count 1
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 997.502
+Coefficient 0.24 with delta 0.03564
+Coefficient 0.00048 with delta 7.128e-05
+>>Coefficient 4.134 with delta 0.594
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 1009.93 to 997.502
+Coefficient 0.24 with delta 0.03564
+Coefficient 0.00048 with delta 7.128e-05
+>>Coefficient 4.134 with delta 0.594
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1206.94 to 997.502
+Coefficient 0.24 with delta 0.03564
+Coefficient 0.00048 with delta 7.128e-05
+>>Coefficient 2.946 with delta 0.594
+
+Count 2
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 997.502
+>>Coefficient 0.27564 with delta 0.03564
+Coefficient 0.00048 with delta 7.128e-05
+Coefficient 3.54 with delta 0.5346
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 1071.27 to 997.502
+>>Coefficient 0.27564 with delta 0.03564
+Coefficient 0.00048 with delta 7.128e-05
+Coefficient 3.54 with delta 0.5346
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1183.8 to 997.502
+>>Coefficient 0.20436 with delta 0.03564
+Coefficient 0.00048 with delta 7.128e-05
+Coefficient 3.54 with delta 0.5346
+
+Count 0
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 997.502
+Coefficient 0.24 with delta 0.032076
+>>Coefficient 0.00055128 with delta 7.128e-05
+Coefficient 3.54 with delta 0.5346
+
+Twiddle to next iteration - error of current iteration is 884.96 to 997.502
+Coefficient 0.24 with delta 0.032076
+>>Coefficient 0.00055128 with delta 7.128e-05
+Coefficient 3.54 with delta 0.5346
+
+Count 1
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 884.96
+Coefficient 0.24 with delta 0.032076
+Coefficient 0.00055128 with delta 7.8408e-05
+>>Coefficient 4.0746 with delta 0.5346
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 910.456 to 884.96
+Coefficient 0.24 with delta 0.032076
+Coefficient 0.00055128 with delta 7.8408e-05
+>>Coefficient 4.0746 with delta 0.5346
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 901.336 to 884.96
+Coefficient 0.24 with delta 0.032076
+Coefficient 0.00055128 with delta 7.8408e-05
+>>Coefficient 3.0054 with delta 0.5346
+
+Count 2
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 884.96
+>>Coefficient 0.272076 with delta 0.032076
+Coefficient 0.00055128 with delta 7.8408e-05
+Coefficient 3.54 with delta 0.48114
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 1050.19 to 884.96
+>>Coefficient 0.272076 with delta 0.032076
+Coefficient 0.00055128 with delta 7.8408e-05
+Coefficient 3.54 with delta 0.48114
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 977.229 to 884.96
+>>Coefficient 0.207924 with delta 0.032076
+Coefficient 0.00055128 with delta 7.8408e-05
+Coefficient 3.54 with delta 0.48114
+
+Count 0
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 884.96
+Coefficient 0.24 with delta 0.0288684
+>>Coefficient 0.000629688 with delta 7.8408e-05
+Coefficient 3.54 with delta 0.48114
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 1034.91 to 884.96
+Coefficient 0.24 with delta 0.0288684
+>>Coefficient 0.000629688 with delta 7.8408e-05
+Coefficient 3.54 with delta 0.48114
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1017.72 to 884.96
+Coefficient 0.24 with delta 0.0288684
+>>Coefficient 0.000472872 with delta 7.8408e-05
+Coefficient 3.54 with delta 0.48114
+
+Count 1
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 884.96
+Coefficient 0.24 with delta 0.0288684
+Coefficient 0.00055128 with delta 7.05672e-05
+>>Coefficient 4.02114 with delta 0.48114
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 979.591 to 884.96
+Coefficient 0.24 with delta 0.0288684
+Coefficient 0.00055128 with delta 7.05672e-05
+>>Coefficient 4.02114 with delta 0.48114
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1174.47 to 884.96
+Coefficient 0.24 with delta 0.0288684
+Coefficient 0.00055128 with delta 7.05672e-05
+>>Coefficient 3.05886 with delta 0.48114
+
+Count 2
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 884.96
+>>Coefficient 0.268868 with delta 0.0288684
+Coefficient 0.00055128 with delta 7.05672e-05
+Coefficient 3.54 with delta 0.433026
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 1029.65 to 884.96
+>>Coefficient 0.268868 with delta 0.0288684
+Coefficient 0.00055128 with delta 7.05672e-05
+Coefficient 3.54 with delta 0.433026
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1134.99 to 884.96
+>>Coefficient 0.211132 with delta 0.0288684
+Coefficient 0.00055128 with delta 7.05672e-05
+Coefficient 3.54 with delta 0.433026
+
+Count 0
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 884.96
+Coefficient 0.24 with delta 0.0259816
+>>Coefficient 0.000621847 with delta 7.05672e-05
+Coefficient 3.54 with delta 0.433026
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 1055.4 to 884.96
+Coefficient 0.24 with delta 0.0259816
+>>Coefficient 0.000621847 with delta 7.05672e-05
+Coefficient 3.54 with delta 0.433026
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1060.06 to 884.96
+Coefficient 0.24 with delta 0.0259816
+>>Coefficient 0.000480713 with delta 7.05672e-05
+Coefficient 3.54 with delta 0.433026
+
+Count 1
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 884.96
+Coefficient 0.24 with delta 0.0259816
+Coefficient 0.00055128 with delta 6.35105e-05
+>>Coefficient 3.97303 with delta 0.433026
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 989.755 to 884.96
+Coefficient 0.24 with delta 0.0259816
+Coefficient 0.00055128 with delta 6.35105e-05
+>>Coefficient 3.97303 with delta 0.433026
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1140.72 to 884.96
+Coefficient 0.24 with delta 0.0259816
+Coefficient 0.00055128 with delta 6.35105e-05
+>>Coefficient 3.10697 with delta 0.433026
+
+Count 2
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 884.96
+>>Coefficient 0.265982 with delta 0.0259816
+Coefficient 0.00055128 with delta 6.35105e-05
+Coefficient 3.54 with delta 0.389723
+
+Twiddle to next iteration - error of current iteration is 830.72 to 884.96
+>>Coefficient 0.265982 with delta 0.0259816
+Coefficient 0.00055128 with delta 6.35105e-05
+Coefficient 3.54 with delta 0.389723
+
+Count 0
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 830.72
+Coefficient 0.265982 with delta 0.0285797
+>>Coefficient 0.00061479 with delta 6.35105e-05
+Coefficient 3.54 with delta 0.389723
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 995.361 to 830.72
+Coefficient 0.265982 with delta 0.0285797
+>>Coefficient 0.00061479 with delta 6.35105e-05
+Coefficient 3.54 with delta 0.389723
+
+Twiddle to next iteration - error of current iteration is 826.414 to 830.72
+Coefficient 0.265982 with delta 0.0285797
+>>Coefficient 0.00048777 with delta 6.35105e-05
+Coefficient 3.54 with delta 0.389723
+
+Count 1
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 826.414
+Coefficient 0.265982 with delta 0.0285797
+Coefficient 0.00048777 with delta 6.98615e-05
+>>Coefficient 3.92972 with delta 0.389723
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 966.367 to 826.414
+Coefficient 0.265982 with delta 0.0285797
+Coefficient 0.00048777 with delta 6.98615e-05
+>>Coefficient 3.92972 with delta 0.389723
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1050.07 to 826.414
+Coefficient 0.265982 with delta 0.0285797
+Coefficient 0.00048777 with delta 6.98615e-05
+>>Coefficient 3.15028 with delta 0.389723
+
+Count 2
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 826.414
+>>Coefficient 0.294561 with delta 0.0285797
+Coefficient 0.00048777 with delta 6.98615e-05
+Coefficient 3.54 with delta 0.350751
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 1035.48 to 826.414
+>>Coefficient 0.294561 with delta 0.0285797
+Coefficient 0.00048777 with delta 6.98615e-05
+Coefficient 3.54 with delta 0.350751
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1040.21 to 826.414
+>>Coefficient 0.237402 with delta 0.0285797
+Coefficient 0.00048777 with delta 6.98615e-05
+Coefficient 3.54 with delta 0.350751
+
+Count 0
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 826.414
+Coefficient 0.265982 with delta 0.0257217
+>>Coefficient 0.000557631 with delta 6.98615e-05
+Coefficient 3.54 with delta 0.350751
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 1082.77 to 826.414
+Coefficient 0.265982 with delta 0.0257217
+>>Coefficient 0.000557631 with delta 6.98615e-05
+Coefficient 3.54 with delta 0.350751
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1058.77 to 826.414
+Coefficient 0.265982 with delta 0.0257217
+>>Coefficient 0.000417908 with delta 6.98615e-05
+Coefficient 3.54 with delta 0.350751
+
+Count 1
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 826.414
+Coefficient 0.265982 with delta 0.0257217
+Coefficient 0.00048777 with delta 6.28754e-05
+>>Coefficient 3.89075 with delta 0.350751
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 975.826 to 826.414
+Coefficient 0.265982 with delta 0.0257217
+Coefficient 0.00048777 with delta 6.28754e-05
+>>Coefficient 3.89075 with delta 0.350751
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1175.68 to 826.414
+Coefficient 0.265982 with delta 0.0257217
+Coefficient 0.00048777 with delta 6.28754e-05
+>>Coefficient 3.18925 with delta 0.350751
+
+Count 2
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 826.414
+>>Coefficient 0.291703 with delta 0.0257217
+Coefficient 0.00048777 with delta 6.28754e-05
+Coefficient 3.54 with delta 0.315676
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 1118.35 to 826.414
+>>Coefficient 0.291703 with delta 0.0257217
+Coefficient 0.00048777 with delta 6.28754e-05
+Coefficient 3.54 with delta 0.315676
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1070.36 to 826.414
+>>Coefficient 0.24026 with delta 0.0257217
+Coefficient 0.00048777 with delta 6.28754e-05
+Coefficient 3.54 with delta 0.315676
+
+Count 0
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 826.414
+Coefficient 0.265982 with delta 0.0231496
+>>Coefficient 0.000550645 with delta 6.28754e-05
+Coefficient 3.54 with delta 0.315676
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 1057.11 to 826.414
+Coefficient 0.265982 with delta 0.0231496
+>>Coefficient 0.000550645 with delta 6.28754e-05
+Coefficient 3.54 with delta 0.315676
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1033.52 to 826.414
+Coefficient 0.265982 with delta 0.0231496
+>>Coefficient 0.000424894 with delta 6.28754e-05
+Coefficient 3.54 with delta 0.315676
+
+Count 1
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 826.414
+Coefficient 0.265982 with delta 0.0231496
+Coefficient 0.00048777 with delta 5.65878e-05
+>>Coefficient 3.85568 with delta 0.315676
+
+Twiddle to next iteration - error of current iteration is 797.567 to 826.414
+Coefficient 0.265982 with delta 0.0231496
+Coefficient 0.00048777 with delta 5.65878e-05
+>>Coefficient 3.85568 with delta 0.315676
+
+Count 2
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 797.567
+>>Coefficient 0.289131 with delta 0.0231496
+Coefficient 0.00048777 with delta 5.65878e-05
+Coefficient 3.85568 with delta 0.347244
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 964.885 to 797.567
+>>Coefficient 0.289131 with delta 0.0231496
+Coefficient 0.00048777 with delta 5.65878e-05
+Coefficient 3.85568 with delta 0.347244
+
+Twiddle to next iteration - error of current iteration is 766.605 to 797.567
+>>Coefficient 0.242832 with delta 0.0231496
+Coefficient 0.00048777 with delta 5.65878e-05
+Coefficient 3.85568 with delta 0.347244
+
+Count 0
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 766.605
+Coefficient 0.242832 with delta 0.0254645
+>>Coefficient 0.000544357 with delta 5.65878e-05
+Coefficient 3.85568 with delta 0.347244
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 995.576 to 766.605
+Coefficient 0.242832 with delta 0.0254645
+>>Coefficient 0.000544357 with delta 5.65878e-05
+Coefficient 3.85568 with delta 0.347244
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 907.938 to 766.605
+Coefficient 0.242832 with delta 0.0254645
+>>Coefficient 0.000431182 with delta 5.65878e-05
+Coefficient 3.85568 with delta 0.347244
+
+Count 1
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 766.605
+Coefficient 0.242832 with delta 0.0254645
+Coefficient 0.00048777 with delta 5.09291e-05
+>>Coefficient 4.20292 with delta 0.347244
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 966.343 to 766.605
+Coefficient 0.242832 with delta 0.0254645
+Coefficient 0.00048777 with delta 5.09291e-05
+>>Coefficient 4.20292 with delta 0.347244
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 984.282 to 766.605
+Coefficient 0.242832 with delta 0.0254645
+Coefficient 0.00048777 with delta 5.09291e-05
+>>Coefficient 3.50843 with delta 0.347244
+
+Count 2
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 766.605
+>>Coefficient 0.268297 with delta 0.0254645
+Coefficient 0.00048777 with delta 5.09291e-05
+Coefficient 3.85568 with delta 0.312519
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 998.98 to 766.605
+>>Coefficient 0.268297 with delta 0.0254645
+Coefficient 0.00048777 with delta 5.09291e-05
+Coefficient 3.85568 with delta 0.312519
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1054.58 to 766.605
+>>Coefficient 0.217367 with delta 0.0254645
+Coefficient 0.00048777 with delta 5.09291e-05
+Coefficient 3.85568 with delta 0.312519
+
+Count 0
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 766.605
+Coefficient 0.242832 with delta 0.0229181
+>>Coefficient 0.000538699 with delta 5.09291e-05
+Coefficient 3.85568 with delta 0.312519
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 992.021 to 766.605
+Coefficient 0.242832 with delta 0.0229181
+>>Coefficient 0.000538699 with delta 5.09291e-05
+Coefficient 3.85568 with delta 0.312519
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1063.66 to 766.605
+Coefficient 0.242832 with delta 0.0229181
+>>Coefficient 0.00043684 with delta 5.09291e-05
+Coefficient 3.85568 with delta 0.312519
+
+Count 1
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 766.605
+Coefficient 0.242832 with delta 0.0229181
+Coefficient 0.00048777 with delta 4.58361e-05
+>>Coefficient 4.1682 with delta 0.312519
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 973.272 to 766.605
+Coefficient 0.242832 with delta 0.0229181
+Coefficient 0.00048777 with delta 4.58361e-05
+>>Coefficient 4.1682 with delta 0.312519
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 1076.29 to 766.605
+Coefficient 0.242832 with delta 0.0229181
+Coefficient 0.00048777 with delta 4.58361e-05
+>>Coefficient 3.54316 with delta 0.312519
+
+Count 2
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 766.605
+>>Coefficient 0.26575 with delta 0.0229181
+Coefficient 0.00048777 with delta 4.58361e-05
+Coefficient 3.85568 with delta 0.281267
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 1010.12 to 766.605
+>>Coefficient 0.26575 with delta 0.0229181
+Coefficient 0.00048777 with delta 4.58361e-05
+Coefficient 3.85568 with delta 0.281267
+
+2nd Iteration worse error
+Twiddle to next iteration - error of current iteration is 987.546 to 766.605
+>>Coefficient 0.219914 with delta 0.0229181
+Coefficient 0.00048777 with delta 4.58361e-05
+Coefficient 3.85568 with delta 0.281267
+
+Count 0
+Starting new iteration
+Twiddle to next iteration - error of current iteration is 0 to 766.605
+Coefficient 0.242832 with delta 0.0206263
+>>Coefficient 0.000533606 with delta 4.58361e-05
+Coefficient 3.85568 with delta 0.281267
+
+2nd Iteration
+Twiddle to next iteration - error of current iteration is 855.866 to 766.605
+Coefficient 0.242832 with delta 0.0206263
+>>Coefficient 0.000533606 with delta 4.58361e-05
+Coefficient 3.85568 with delta 0.281267

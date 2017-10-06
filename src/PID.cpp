@@ -1,6 +1,7 @@
 #include "PID.h"
 #include <iostream>
 #include <math.h>
+#include <cassert>
 
 using namespace std;
 
@@ -8,106 +9,168 @@ using namespace std;
 * TODO: Complete the PID class.
 */
 
-PID::PID(double const &_p, double const &_i, double const &_d, int _iterations)
-: p_error(0.), i_error(0.), d_error(0.)
-, coefficients()//Kp(_p), Ki(_i), Kd(_d)
-, isInitialized(false)
-, cteBias(0.), ctePrevious(0.), cteSum(0.)
-, deltaK(), deltaKIndex(-1)
-, iterations(_iterations), curIteration(1)
-, errorSum(0.), previousErrorSum(-1.)
-, condition(false)
+PID::PID(PID::TControllerCoefficients const & controllerCfg)
+: m_cteSum(0.)
+, m_ctePrior(0.)
+, m_currentError(0.)
+, m_noController(controllerCfg.size())
+, m_controller(new TControllerElement [m_noController])
+, m_twiddle()
 {
-  coefficients[0] = _p;
-  coefficients[1] = _i;
-  coefficients[2] = _d;
-  deltaK[0] = 0.1;
-  deltaK[1] = 0.0002;
-  deltaK[2] = 0.7;
-  cout<<__FUNCTION__<<"Kp "<<coefficients[0]<<" Ki "<<coefficients[1]<<" Kd "<<coefficients[2]<<endl;
+  for(int i(0); i < m_noController; i++)
+  {
+    EControlType const &controllerType(controllerCfg[i].first);
+    double const &controllerCoefficient(controllerCfg[i].second);
+    m_controller[i].first = controllerCoefficient;
+    switch(controllerType)
+    {
+    case P:
+      m_controller[i].second = &PID::p_controller;
+      break;
+    case I:
+      m_controller[i].second = &PID::i_controller;
+      break;
+    case D:
+      m_controller[i].second = &PID::d_controller;
+      break;
+    }
+  }
+  cout<<__FUNCTION__<<" with a total of "<<m_noController<< " controllers"<<endl;
 }
 
-PID::~PID() {}
+PID::~PID()
+{
+  delete [] m_controller;
+}
 
 
-void PID::UpdateError(double cte) {
-  if(!isInitialized)
+void PID::UpdateError(double const & cte) {
+  m_cteSum+=cte;
+  m_currentError=0.;
+  //iterate over all given controller and sum up the error
+  for(int i(0); i<m_noController;i++)
   {
-    cout<<__FUNCTION__<<" first call - initialize bias to "<<cte<<endl;
-    cteBias = 0.;// cte;
-    ctePrevious = 0.;
-    isInitialized=true;
+    m_currentError -= (this->*m_controller[i].second)(m_controller[i].first, cte);
   }
-  if(curIteration==0)
+  m_ctePrior = cte;
+  applyTwiddle();
+}
+
+bool PID::setTwiddle(std::vector<double> const &deltas, int noSamples)
+{
+  if(m_noController != (int)deltas.size())
   {
-    //do the twiddle
-    if(previousErrorSum == -1.)
+    return false;
+  }
+  m_twiddle.reset(deltas, noSamples);
+  return true;
+}
+
+void PID::applyTwiddle()
+{
+  if(m_twiddle.is_active)
+  {
+    int &cnt(m_twiddle.twiddle_cnt);
+    m_twiddle.cur_sample++;
+    if(m_twiddle.cur_sample == m_twiddle.no_samples)
     {
-      previousErrorSum = errorSum;
-      deltaKIndex = 0;
-      coefficients[deltaKIndex] += deltaK[deltaKIndex];
-    }
-    else
-    {
-      if(condition)
+      bool startNextIteration(false);
+      if(m_twiddle.best_Error == -1.)
       {
-        condition = false;
-        if(errorSum < previousErrorSum)
-        {
-          previousErrorSum = errorSum;
-          deltaK[deltaKIndex]*=1.1;
-//          coefficients[deltaKIndex] += deltaK[deltaKIndex];
-        }
-        else
-        {
-          coefficients[deltaKIndex]+= deltaK[deltaKIndex];
-          deltaK[deltaKIndex] *= 0.9;
-        }
-        deltaKIndex = (deltaKIndex+1)%3;
+//        dumpCoefficients();
+        m_twiddle.best_Error = m_twiddle.cur_Error;
+        //start with the twiddle action
+//        m_controller[cnt].first += m_twiddle.delta[cnt];
+        startNextIteration = true;
+      }
+      else if(m_twiddle.best_Error > m_twiddle.cur_Error)
+      {
+        dumpCoefficients();
+        m_twiddle.delta[cnt] *= 1.1;
+        m_twiddle.best_Error = m_twiddle.cur_Error;
+        m_twiddle.twiddle_second_iteration = false;
+        startNextIteration = true;
+//        cnt++;
+//        m_controller[cnt].first += m_twiddle.delta[cnt];
+      }
+      else if(m_twiddle.twiddle_second_iteration)
+      {
+        cout<<"2nd Iteration worse error"<<endl;
+        dumpCoefficients();
+        m_controller[cnt].first += m_twiddle.delta[cnt];
+        m_twiddle.delta[cnt] *= 0.9;
+//        cnt++;
+//        m_controller[cnt].first += m_twiddle.delta[cnt];
+        m_twiddle.twiddle_second_iteration = false;
+        startNextIteration = true;
       }
       else
       {
-        if(errorSum < previousErrorSum)
-        {
-          previousErrorSum = errorSum;
-          deltaK[deltaKIndex]*=1.1;
-//          coefficients[deltaKIndex] += deltaK[deltaKIndex];
-          deltaKIndex = (deltaKIndex+1)%3;
-        }
-        else
-        {
-          coefficients[deltaKIndex] -= 2*deltaK[deltaKIndex];
-          condition = true;
-        }
+        cout<<"2nd Iteration"<<endl;
+        dumpCoefficients();
+        m_controller[cnt].first -= 2*m_twiddle.delta[cnt];
+        m_twiddle.twiddle_second_iteration = true;
+      }
+      m_twiddle.cur_Error = 0.;
+      m_twiddle.cur_sample = 0;
+      if (startNextIteration)
+      {
+        cout<<"Count "<<cnt<<endl;
+        cnt = ((cnt+1)%m_noController);
+        m_controller[cnt].first += m_twiddle.delta[cnt];
+        cout<<"Starting new iteration"<<endl;
+        dumpCoefficients();
       }
     }
-    errorSum = 0.;
+    else
+    {
+      m_twiddle.cur_Error += (m_ctePrior * m_ctePrior);
+    }
   }
-  //adjust the error - we want to stay in the center
-  cte-=cteBias;
-  cteSum += cte;
-
-  //calculate the errors
-  p_error = cte * coefficients[0];
-  d_error = (cte - ctePrevious) * coefficients[2];
-  i_error = coefficients[1] * cteSum;
-
-  //update the previous cte
-  ctePrevious = cte;
-
-//  for debugging purpose only
-//  cout<<__FUNCTION__<<"CTE "<<cte<<endl;
 }
 
-double PID::TotalError()  {
-//  Debugging purpose only
-//  cout<<__FUNCTION__<<"P "<<p_error<<" I "<<i_error<<" D "<<d_error<<endl;
-  curIteration = (curIteration+1)%iterations;
-  if(curIteration == 0)
+void PID::dumpCoefficients()
+{
+  cout<<"Twiddle to next iteration - error of current iteration is "<<m_twiddle.cur_Error<<" to "<<m_twiddle.best_Error<<endl;
+  for(int i(0); i < m_noController; i++)
   {
-      cout<<__FUNCTION__<<endl<<endl<<endl<<"P "<<coefficients[0]<<" I "<<coefficients[1]<<" D "<<coefficients[2]<<" ErrorSum "<<errorSum<<endl<<endl<<endl<<endl;
+    if(m_twiddle.twiddle_cnt==i)
+    {
+      cout << ">>Coefficient "<<m_controller[i].first<<" with delta "<<m_twiddle.delta[i]<<endl;
+    }
+    else
+    {
+      cout << "Coefficient "<<m_controller[i].first<<" with delta "<<m_twiddle.delta[i]<<endl;
+    }
   }
-  errorSum += pow(ctePrevious, 2.);
-  return -(p_error+d_error+i_error);
+  cout<<endl;
+}
+
+
+//TWIDDLE
+PID::STwiddleParam::STwiddleParam()
+: is_active(false)
+, no_samples(0)
+, cur_sample(0)
+, delta(0)
+, best_Error(-1.)
+, cur_Error(0.)
+, twiddle_cnt(-1)
+, twiddle_second_iteration(false)
+{}
+
+PID::STwiddleParam::~STwiddleParam()
+{}
+
+void PID::STwiddleParam::reset(std::vector<double> const &deltas, int noSamples)
+{
+  is_active = deltas.size() != 0;
+  no_samples = noSamples;
+  cur_sample = 0;
+  delta = deltas;
+  twiddle_cnt = -1;
+  best_Error = -1;
+  cur_Error=0.;
+  twiddle_second_iteration = false;
 }
 

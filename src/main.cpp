@@ -32,7 +32,22 @@ int main()
 {
   uWS::Hub h;
   // TODO: Initialize the pid variable.
-  PID pid(0.2, 0.0004, 3);
+  PID::TControllerCoefficients pidConfig;
+  //Values from the lesson - already good enought to complete the track
+//  pidConfig.push_back(PID::TControlCoefficient(PID::P, 0.2));
+//  pidConfig.push_back(PID::TControlCoefficient(PID::I, 0.0004));
+//  pidConfig.push_back(PID::TControlCoefficient(PID::D, 3));
+  //after several rounds of twiddle i got these values
+  pidConfig.push_back(PID::TControlCoefficient(PID::P, 0.242832));
+  pidConfig.push_back(PID::TControlCoefficient(PID::I, 0.00048777));
+  pidConfig.push_back(PID::TControlCoefficient(PID::D, 3.85568));
+  PID pid(pidConfig);
+  std::vector<double> deltas;
+  for(int i(0), _maxI(pidConfig.size()); i<_maxI; i++)
+  {
+    deltas.push_back(pidConfig[i].second*0.2);
+  }
+  pid.setTwiddle(deltas, 7000);
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
     // The 4 signifies a websocket message
@@ -62,13 +77,24 @@ int main()
           steer_value = std::max<double>(steer_value, -1.);
           steer_value = std::min<double>(steer_value, 1.);
 
+          double throttle = 0.3;
+          //try to keep almost constant speed
+          if(speed>30.)
+          {
+            throttle = 0.;
+          }
+          //in case that we're facing a high error, stop acceleration
+          if(fabs(steer_value)> 0.7)
+          {
+            throttle = 0.;
+          }
 
           // DEBUG
 //          std::cout << "CTE: " << cte << " Steering Value: " << steer_value << std::endl;
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
-          msgJson["throttle"] = 0.3;
+          msgJson["throttle"] = throttle;
           auto msg = "42[\"steer\"," + msgJson.dump() + "]";
 //          std::cout << msg << std::endl;
           ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);
