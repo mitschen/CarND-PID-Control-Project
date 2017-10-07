@@ -29,6 +29,7 @@ public:
   virtual ~PID();
   /*
   * Update the PID error variables given cross track error.
+  * @param[IN] the cross track error
   */
   void UpdateError(double const & cte);
 
@@ -39,7 +40,13 @@ public:
   {
     return m_currentError;
   }
-
+  /*
+   * enable the online twiddle optimization
+   *
+   * @param [IN] deltas that should be applied to the controller coefficients
+   * @param [IN] number of measurement samples describing a turn
+   * @return true in case that twiddle was activated, false otherwise
+   */
   bool setTwiddle(std::vector<double> const &deltas, int noSamples = 8000);
 private:
   //MEMBERS AND TYPEDEFS
@@ -59,14 +66,14 @@ private:
     void reset(std::vector<double> const &deltas, int noSamples);
 
     //MEMBER
-    bool is_active;
-    int no_samples;
-    int cur_sample;
-    std::vector<double> delta;
-    double best_Error;
-    double cur_Error;
-    int twiddle_cnt;
-    bool twiddle_second_iteration;
+    bool is_active;                     //twiddle is enabled
+    int no_samples;                     //total number of samples before changing twiddle param
+    int cur_sample;                     //current number of applied samples
+    std::vector<double> delta;          //the deltas for each dimension which should by applied to the coefficients
+    double best_Error;                  //best error recorded so far
+    double cur_Error;                   //current error recorded in the current iteraiton
+    int twiddle_cnt;                    //index of the coefficient currently twiddled
+    bool twiddle_second_iteration;      //condition value to reflec the two-level twiddle algorithm
   } m_twiddle;
   /**
    * calculate the p-related part of error
@@ -90,8 +97,17 @@ private:
     return (cte-m_ctePrior)*coefficient;
   }
 
+  /**
+   * do online twiddle algorithm
+   * This method is called during @see UpdateError
+   * and will only have an impact in case that the client
+   * has enabled the twiddle by calling @see setTwiddle
+   */
   void applyTwiddle();
 
+  /**
+   * dump the resulting coefficients to console
+   */
   void dumpCoefficients();
 
 };

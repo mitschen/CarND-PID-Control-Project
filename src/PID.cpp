@@ -60,6 +60,7 @@ bool PID::setTwiddle(std::vector<double> const &deltas, int noSamples)
 {
   if(m_noController != (int)deltas.size())
   {
+    cout<<"size(deltas) do not match the size(controller-coefficients) - twiddle disabled"<<endl;
     return false;
   }
   m_twiddle.reset(deltas, noSamples);
@@ -77,10 +78,8 @@ void PID::applyTwiddle()
       bool startNextIteration(false);
       if(m_twiddle.best_Error == -1.)
       {
-//        dumpCoefficients();
-        m_twiddle.best_Error = m_twiddle.cur_Error;
         //start with the twiddle action
-//        m_controller[cnt].first += m_twiddle.delta[cnt];
+        m_twiddle.best_Error = m_twiddle.cur_Error;
         startNextIteration = true;
       }
       else if(m_twiddle.best_Error > m_twiddle.cur_Error)
@@ -90,8 +89,6 @@ void PID::applyTwiddle()
         m_twiddle.best_Error = m_twiddle.cur_Error;
         m_twiddle.twiddle_second_iteration = false;
         startNextIteration = true;
-//        cnt++;
-//        m_controller[cnt].first += m_twiddle.delta[cnt];
       }
       else if(m_twiddle.twiddle_second_iteration)
       {
@@ -99,8 +96,6 @@ void PID::applyTwiddle()
         dumpCoefficients();
         m_controller[cnt].first += m_twiddle.delta[cnt];
         m_twiddle.delta[cnt] *= 0.9;
-//        cnt++;
-//        m_controller[cnt].first += m_twiddle.delta[cnt];
         m_twiddle.twiddle_second_iteration = false;
         startNextIteration = true;
       }

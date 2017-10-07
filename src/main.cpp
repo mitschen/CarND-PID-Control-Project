@@ -63,6 +63,7 @@ int main()
           double cte = std::stod(j[1]["cte"].get<std::string>());
           double speed = std::stod(j[1]["speed"].get<std::string>());
           double angle = std::stod(j[1]["steering_angle"].get<std::string>());
+          (void) angle; //get rid of gcc warning
           double steer_value(0);
           /*
           * TODO: Calcuate steering value here, remember the steering value is
